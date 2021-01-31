@@ -21,7 +21,7 @@
 
     $wpdb->insert(
             $table_name, //table
-            array('id' => $id, 'name' => $name, 'sobrenome' => $name, 'description' => $name), //data
+            array('id' => $id, 'name' => $name, 'sobrenome' => $nome, 'description' => $nome,), //data
             array('%s', '%s') //data format			
     );
 
@@ -53,15 +53,13 @@
 		<br>
 		<br>
 		<br>
-		<br>
-		<br>
-		<br>
+		
 
         <?php if (isset($message)): ?><div class="updated"><p><?php echo $message; ?></p></div><?php endif; ?>
 
 		<div class="row">
 			<div class="col-sm-3"></div>
-			<h1>Bem vindo!</h1>
+			<h1><em>Crie um memorial <br> Para uma pessoal especial!</em></h1>
 		</div>
 
 		<div class="row">
@@ -72,12 +70,15 @@
 
 		<div class="row">
 			<div class="col-sm-3"></div>
-			<p>
-				<br>
-				kkkkkkkkk
-				texto
-				<br>
-			</p>
+			<p><em>
+				<br>O vazio deixado pela ausência é imensurável
+				<br> com a pura certeza que jamais será novamente ocupado.
+				<br>A saudade será eterna e a presença não poderá mais ser sentida,
+				<br> mas as lembranças dos bons momentos vividos são um ótimo conforto,
+				<br> que permanecerá para sempre conosco.
+				<br>Crie aqui o memorial para seu essa pessoa
+				<br> que merece sempre ser lembrado.
+			</em></p>
 		</div>
 		<br>
 		<br>
@@ -85,19 +86,16 @@
 		<br>
 		<br>
 		<br>
-		<br>
-		<br>
-		<br>
+
 	
 	</section>
 
 	<section id="memorias">
 		<div class="container">
-			<h1>Memorias</h1>
 			<br>
 			<br>
 			<br>
-			<br>
+			<h1><em>Memorias</em></h1>
 			
 			
 		                <div class="row mb-5">
@@ -105,17 +103,30 @@
 							<div class="col-sm-3">
 								
 								<div class="card" style="  border-radius: 1.25rem; padding: 10px">
-									<img class="card-img-top" src="icon.png" alt="icon" height="70px" style="width:85px!important;">
+									<img class="card-img-top" src="icon.png" alt="icon" height="100px" style="width:85px!important;">
 
 									<div classe="card-body" style="  border-radius: 1.25rem;">
 										<form action="" method="post">
 										  <div class="form-group">
+										  	<div class="form-rows"><em>
 										    <label for="name">Nome:</label>
 										    <input type="name" name="name" class="form-control" placeholder="Digite o Nome" id="name" value="">
-										  </div>
+										    <label for="name">Sobrenome:</label>
+										    <input type="name" name="sname" class="form-control" placeholder="Digite o Sobrenome" id="sobrenome" value="">
+										    <label for="name">Descrição:</label>
+										    <input type="name" name="bio" class="form-control" placeholder="Digite o Biografia" id="descricao" value="">
+										    <label for="nome" >Data de nascimento</label>
+										    <div class="col-md-20">
+										    <input type="date"  class="form-control" id="date" value=""></div>
+										    <label for="nome" >Data de falecimento</label>
+										    <div class="col-md-20">
+										    <input type="date"  class="form-control" id="date" value=""></div>
+										  </div></em>
+										 </div>
+
 										  <button type="submit" class="btn btn-primary">Submit</button>
 										</form>
-										<h4 classe="card-title">cadastre</h4>
+										<h4 classe="card-title"></h4>
 
 
 									</div>
