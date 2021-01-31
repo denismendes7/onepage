@@ -4,19 +4,16 @@ function crud_demo_update() {
     global $wpdb;
     $table_name = $wpdb->prefix . "crud";
     
-    print_r($_POST);
-
     $id = $_GET["id"];
-    $name = $_POST["name"];
-    $sname = $_POST["name"];
-    $descricao = $_POST["name"];
+    $name = $_GET["name"];
+    $sobrenome = $_GET["sobrenome"];
+    $descricao = $_GET["descricao"];
     $message = '';
 //update
     if (isset($_POST['update'])) {
         $wpdb->update(
                 $table_name, //table
                 array('name' => $name), //data
-                array('ID' => $id),
                 array('sobrenome' => $sobrenome),
                 array('descricao' => $descricao), //where
                 array('%s'), //data format
@@ -27,7 +24,7 @@ function crud_demo_update() {
     else if (isset($_POST['delete'])) {
         $wpdb->query($wpdb->prepare("DELETE FROM $table_name WHERE id = %s", $id));
     } else {//selecting value to update	
-        $schools = $wpdb->get_results($wpdb->prepare("SELECT id,name,sobrenome,descricao from $table_name where id=%s", $id));
+        $schools = $wpdb->get_results($wpdb->prepare("SELECT id,name,sobrenome,description as descricao from $table_name where id=%s", $id));
         foreach ($schools as $s) {
             $name = $s->name;
         }
@@ -37,11 +34,11 @@ function crud_demo_update() {
     <div class="wrap">
         <h2>Atualize o registro</h2>
 
-        <?php if ($_POST['delete']) { ?>
+        <?php if (isset($_POST['delete']) && $_POST['delete']) { ?>
             <div class="updated"><p>Registro excluido</p></div>
             <a href="<?php echo admin_url('admin.php?page=crud_demo_list') ?>">&laquo; Voltar a lista</a>
 
-        <?php } else if ($_POST['update']) { ?>
+        <?php } else if (isset($_POST['update']) && $_POST['update']) { ?>
             <div class="updated"><p>Registro atualizado</p></div>
             <a href="<?php echo admin_url('admin.php?page=crud_demo_list') ?>">&laquo; Voltar a lista</a>
 

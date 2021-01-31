@@ -31,7 +31,7 @@ function crud_demo_list() {
                     <td class="manage-column ss-list-width"><?php echo $row->name; ?></td>
                     <td class="manage-column ss-list-width"><?php echo $row->sobrenome; ?></td>
                     <td class="manage-column ss-list-width"><?php echo $row->descricao; ?></td>">
-                    <td><a href="<?php echo admin_url('admin.php?page=crud_demo_update&id=' . $row->id); ?>">Atualizar</a></td>
+                    <td><a href="<?php echo admin_url('admin.php?page=crud_demo_update&id=' . $row->id.'&name='.$row->name.'&sobrenome='.$row->sobrenome.'&descricao='.$row->descricao); ?>">Atualizar</a></td>
                 </tr>
             <?php } ?>
         </table>
