@@ -15,8 +15,8 @@ function ss_options_install() {
             `id` varchar(3) CHARACTER SET utf8 NOT NULL,
             `name` varchar(50) CHARACTER SET utf8 NOT NULL,
             `sobrenome` varchar(50) CHARACTER SET utf8 NOT NULL,           
-            `date_nasc` datetime NOT NULL,   
-            `date_fal` datetime  NOT NULL,  
+            `datenasc` datetime NOT NULL,   
+            `datefal` datetime  NOT NULL,  
             `description` text  NOT NULL,        
             `photo` text  NOT NULL,                                                                
             PRIMARY KEY (`id`)R

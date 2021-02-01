@@ -16,6 +16,8 @@
     $name =   $_POST["name"];
     $sobrenome = $_POST["sobrenome"];
     $descricao = $_POST["descricao"];
+    $datenasc = $_POST["datenasc"];
+    $datefal = $_POST["datefal"];
 
 
 	global $wpdb;
@@ -23,7 +25,7 @@
 
     $wpdb->insert(
             $table_name, //table
-            array('id' => $id, 'name' => $name, 'sobrenome' => $sobrenome, 'description' => $descricao,), //data
+            array('id' => $id, 'name' => $name, 'sobrenome' => $sobrenome, 'description' => $descricao, 'datenasc' => $datenasc, 'datefal' => $datefal), //data
             array('%s', '%s') //data format			
     );
 
@@ -117,10 +119,10 @@
 										    <input type="name" name="descricao" class="form-control" placeholder="Digite o Biografia" id="descricao" value="">
 										    <label for="nome" >Data de nascimento</label>
 										    <div class="col-md-20">
-										    <input type="date"  class="form-control" id="date" value=""></div>
+										    <input type="date" name="datenasc" class="form-control" id="date" value=""></div>
 										    <label for="nome" >Data de falecimento</label>
 										    <div class="col-md-20">
-										    <input type="date"  class="form-control" id="date" value=""></div>
+										    <input type="date" name="datefal" class="form-control" id="date" value=""></div>
 										  </div></em>
 										 </div>
 
