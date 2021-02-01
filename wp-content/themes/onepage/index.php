@@ -14,6 +14,8 @@
 
 
     $name =   $_POST["name"];
+    $sobrenome = $_POST["sobrenome"];
+    $descricao = $_POST["descricao"];
 
 
 	global $wpdb;
@@ -21,11 +23,9 @@
 
     $wpdb->insert(
             $table_name, //table
-            array('id' => $id, 'name' => $name, 'sobrenome' => $nome, 'description' => $nome,), //data
+            array('id' => $id, 'name' => $name, 'sobrenome' => $sobrenome, 'description' => $descricao,), //data
             array('%s', '%s') //data format			
     );
-
-
 
 
     	$message.="Registro salvo corretamente";
@@ -112,9 +112,9 @@
 										    <label for="name">Nome:</label>
 										    <input type="name" name="name" class="form-control" placeholder="Digite o Nome" id="name" value="">
 										    <label for="name">Sobrenome:</label>
-										    <input type="name" name="sname" class="form-control" placeholder="Digite o Sobrenome" id="sobrenome" value="">
+										    <input type="name" name="sobrenome" class="form-control" placeholder="Digite o Sobrenome" id="sobrenome" value="">
 										    <label for="name">Descrição:</label>
-										    <input type="name" name="bio" class="form-control" placeholder="Digite o Biografia" id="descricao" value="">
+										    <input type="name" name="descricao" class="form-control" placeholder="Digite o Biografia" id="descricao" value="">
 										    <label for="nome" >Data de nascimento</label>
 										    <div class="col-md-20">
 										    <input type="date"  class="form-control" id="date" value=""></div>

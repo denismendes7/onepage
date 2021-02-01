@@ -3,8 +3,8 @@
 function crud_demo_create() {
     $id = $_POST["id"];
     $name = $_POST["name"];
-        $sname = $_POST["name"];
-    $descricao = $_POST["name"];
+    $sname = $_POST["sobrenome"];
+    $descricao = $_POST["descricao"];
     $message = '';
     //insert
     if (isset($_POST['insert'])) {
@@ -36,11 +36,11 @@ function crud_demo_create() {
                 </tr>
                 <tr>
                     <th class="ss-th-width">Sobrenome</th>
-                    <td><input type="text" name="sname" value="<?php echo $sname; ?>" class="ss-field-width" /></td>
+                    <td><input type="text" name="sobrenome" value="<?php echo $sname; ?>" class="ss-field-width" /></td>
                 </tr>
                  <tr>
                     <th class="ss-th-width">Descrição</th>
-                    <td><input type="text" name="sname" value="<?php echo $descricao; ?>" class="ss-field-width" /></td>
+                    <td><input type="text" name="descricao" value="<?php echo $descricao; ?>" class="ss-field-width" /></td>
                 </tr>
             </table>
             <input type='submit' name="insert" value='Guardar registro' class='button'>
